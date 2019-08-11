@@ -1,0 +1,9 @@
+#react-root{
+    & > header, main, footer{
+        margin-bottom: 2em;
+    }
+
+    header > div{
+        margin-left: 1em;
+    }
+}

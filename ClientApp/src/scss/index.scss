@@ -1,0 +1,13 @@
+﻿@import './variables.scss';
+@import './reset.scss';
+
+body {
+    font-family: 'Judson', serif;
+    color: $textColor;
+    background-color: $backgroundColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo Black', sans-serif;
+    color: lighten($textColor, 10%);
+}

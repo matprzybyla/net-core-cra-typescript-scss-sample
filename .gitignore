@@ -1,0 +1,8 @@
+# ClientApp dependencies
+ClientApp/node_modules
+ClientApp/coverage
+ClientApp/build
+
+# Visual Studio
+/obj
+/bin

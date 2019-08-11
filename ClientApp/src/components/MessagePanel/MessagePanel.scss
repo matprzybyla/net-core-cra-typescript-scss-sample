@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+
+.messagePanel{
+    margin-left: 1em;
+    header{
+        margin-bottom: 1em;
+
+        button:not(:first-child) {
+            margin: 0 1em;            
+        }
+
+        .fetchingDataLabel{
+            color: $alertColor;
+            font-weight: 600;
+            margin: 1em;
+            visibility: collapse;
+    
+            &.visible{
+                visibility: visible;
+            }
+        }
+
+        .errorLabel{
+            color: $errorColor;
+        }
+    }
+}
