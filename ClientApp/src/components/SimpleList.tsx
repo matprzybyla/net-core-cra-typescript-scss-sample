@@ -10,7 +10,7 @@ export const SimpleList: React.FC<SimpleListProps> = (props: SimpleListProps) =>
     return (
         <ul>
             {
-                (!listItems || listItems.length === 0) && <li> nothing yet in store... </li>
+                (!listItems || listItems.length === 0) && <li> nothing yet in store, try fetching something... </li>
             }
             {
                 listItems !== undefined && listItems
