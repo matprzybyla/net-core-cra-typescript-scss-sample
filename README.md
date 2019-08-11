@@ -20,4 +20,5 @@ This is a simple template project you can use as a modern app starting point.
 * Open VSCode (if using other preferred editor running the debug may differ)
 * Go to ClientApp subfolder in which is project bootstrapped with Create React App 
 * run `npm install`, `tsc`
-* run application hitting F5 - this will start .Net Core API and open React/Redux client app in browser
+* run `dotnet run` in root app folder, navigate to `localhost:5000` with your browser
+* or run application hitting F5 - this will start .Net Core API and open React/Redux client app in browser
