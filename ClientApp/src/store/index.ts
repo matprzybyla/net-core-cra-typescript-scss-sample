@@ -1,4 +1,4 @@
-import * as Test from './test';
+import * as Test from './testStore';
 import { routerMiddleware } from 'react-router-redux';
 import { History } from 'history'
 import { createStore, compose, applyMiddleware, combineReducers, Store, Reducer, Middleware } from 'redux';

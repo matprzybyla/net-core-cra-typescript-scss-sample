@@ -1,11 +1,12 @@
 import './MessagePanel.scss';
 
 import * as React from 'react';
-import * as TestStore from '../../store/test';
+import * as TestStore from '../../store/testStore';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../../store';
 import { SimpleList } from '../SimpleList';
 import { ThunkDispatch } from 'redux-thunk';
+import { ActionCreator } from 'redux';
 
 type StateProps = { 
     dataFromStore: string[],
@@ -13,8 +14,8 @@ type StateProps = {
     errorMessage?: string
 };
 type DispatchProps = {
-    requestNewData: () => Promise<void>,
-    clearData: () => void
+    requestNewData: ActionCreator<TestStore.FetchDataThunkAction>,
+    clearData: ActionCreator<TestStore.ClearDataAction>
 }
 type OwnProps = {};
 type MessagePanelProps = StateProps & DispatchProps & OwnProps;
@@ -49,9 +50,9 @@ const mapStateToProps = (state: ApplicationState, ownProps: OwnProps): StateProp
     }
 }
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<TestStore.State, any, TestStore.AcceptedAction>) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<ApplicationState, any, TestStore.AcceptedAction>) => {
     return {
-        requestNewData: () => dispatch(TestStore.fetchDataAction()),
+        requestNewData: () => dispatch(TestStore.fetchDataAction() as any),
         clearData: () => dispatch(TestStore.clearDataAction()),
     };
   };
