@@ -1,3 +1,4 @@
+using Devtronik.Portal.WebApp.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,9 @@ namespace Devtronik.Web.App
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            
+            // Add custom middleware to app pipeline.
+            app.UseTopSecretMiddleware();
 
             app.UseMvc(routes =>
             {
