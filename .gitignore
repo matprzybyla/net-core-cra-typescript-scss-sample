@@ -6,3 +6,4 @@ ClientApp/build
 # Visual Studio
 /obj
 /bin
+/.vs
