@@ -8,7 +8,7 @@ namespace Devtronik.Web.App.Services
 
         public TestService(IConfiguration configurationSettings)
         {
-            _message = configurationSettings["testConfigMessage"];
+            _message = configurationSettings?["testConfigMessage"];
         }
 
         public string GetValue()

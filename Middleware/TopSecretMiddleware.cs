@@ -26,6 +26,7 @@ namespace Devtronik.Portal.WebApp.Middleware
                 var headerSecretKey = context.Request.Headers["key"];
                 if (string.Compare(headerSecretKey, TOP_SECRET_HEADER_KEY, true) != 0)
                 {
+                    _logger.LogWarning("Invalid token when entering secured route");
                     context.Response.StatusCode = 403; //Forbidden
                     await context.Response.WriteAsync("TopSecret key was not passed in request header");
                     return;
