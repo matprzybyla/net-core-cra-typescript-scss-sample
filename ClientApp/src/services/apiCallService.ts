@@ -22,4 +22,15 @@ export abstract class ApiCallService {
                 throw error;
             })
     }
+
+    public static async fetchSecuredData(secret?: string): Promise<string> {
+        return axios.get('/api/testsecure', { 'headers': { 'key': secret ?? "NO_SECRET_KEY_PROVIDED" } })
+            .then(function (response: AxiosResponse<string>) {
+                return response.data;
+            })
+            .catch(function (error) {
+                console.error(error);
+                throw error;
+            })
+    }
 }

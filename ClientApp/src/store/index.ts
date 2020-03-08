@@ -1,17 +1,19 @@
 import * as Test from './testStore';
-import { routerMiddleware } from 'react-router-redux';
+import * as SecuredTest from './testSecured';
 import { History } from 'history'
 import { createStore, compose, applyMiddleware, combineReducers, Store, Reducer, Middleware } from 'redux';
 import thunk from 'redux-thunk';
-import { connectRouter } from 'connected-react-router';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 
 // The top-level state object
 export interface ApplicationState {
-    test: Test.State
+    test: Test.State,
+    secured: SecuredTest.State
 }
 
 const reducers = {
     test: Test.reducer,
+    secured: SecuredTest.reducer
 };
 
 declare const process: {
