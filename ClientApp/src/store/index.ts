@@ -1,10 +1,9 @@
 import * as Test from './test';
 import * as SecuredTest from './testSecured';
-import { routerMiddleware } from 'react-router-redux';
 import { History } from 'history'
 import { createStore, compose, applyMiddleware, combineReducers, Store, Reducer, Middleware } from 'redux';
 import thunk from 'redux-thunk';
-import { connectRouter } from 'connected-react-router';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 
 // The top-level state object
 export interface ApplicationState {

@@ -1,6 +1,6 @@
 import { Reducer, Action, ActionCreator } from "redux";
-import axios, { AxiosResponse } from 'axios';
 import { ThunkAction } from "redux-thunk";
+import axios, { AxiosResponse } from 'axios';
 
 // STATE
 export interface State {
@@ -42,7 +42,9 @@ export const fetchSecuredDataAction: ActionCreator<FetchDataAction> = (secret?: 
     }
 
     dispatch(({ type: ActionTypes.START_FETCH_SECURED_DATA }));
-    axios.get('/api/testsecure', { 'headers': { 'key': secret } })
+
+    // saqmple TS 3.7+ feature
+    axios.get('/api/testsecure', { 'headers': { 'key': secret ?? "NO_SECRET_KEY_PROVIDED" } })
         .then(function (response: AxiosResponse<string>) {
             console.log(response);
             dispatch(({ type: ActionTypes.SUCCESS_FETCH_SECURED_DATA, payload: response.data }));
