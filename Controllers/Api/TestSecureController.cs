@@ -23,7 +23,7 @@ namespace Devtronik.Web.App.Controllers.Api
             // add some delay on the line to show that UI waits for data from API
             await Task.Delay(500);
 
-            return Ok($"Value from TestService: {_testService.GetValue()}");
+            return Ok($"Secured value from TestService: {_testService.GetValue()}");
         }
     }
 }

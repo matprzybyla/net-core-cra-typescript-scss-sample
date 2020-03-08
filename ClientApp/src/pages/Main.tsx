@@ -14,6 +14,7 @@ class Main extends React.Component<OwnProps, {}> {
                     <nav>
                         <Link to="/">Go Home</Link><br/>
                         <Link to="/somewhere">Go somewhere</Link><br />
+                        <Link to="/testsecured">Check secured</Link><br />
                         <Link to="/no_such_page">Go 404</Link><br />
                     </nav>
                 </div>

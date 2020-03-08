@@ -20,6 +20,8 @@ type OwnProps = {};
 type MessagePanelProps = StateProps & DispatchProps & OwnProps;
 type MessagePanelState = {};
 
+// This is an older construction Class component. Use of this is now not trendy, too complex, too slow. 
+// Please check SecuredComponent for new construction sample
 class MessagePanel extends React.Component<MessagePanelProps, MessagePanelState> {  
     public render() {        
         return <div className="messagePanel">

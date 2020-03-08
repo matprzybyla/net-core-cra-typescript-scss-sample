@@ -41,20 +41,17 @@ export const fetchDataAction: ActionCreator<FetchDataAction> = () => async (disp
         return;
     }
 
-    dispatch(startFetchDataAction());
+    dispatch(({ type: ActionTypes.START_FETCH_DATA }));
     axios.get('/api/test')
         .then(function (response: AxiosResponse<string>) {
             console.log(response);
-            dispatch(successFetchDataAction(response.data));
+            dispatch(({ type: ActionTypes.SUCCESS_FETCH_DATA, payload: response.data }));
         })
         .catch(function (error) {
             console.log(error);
-            dispatch(errorFetchDataAction(error.message));
+            dispatch(({ type: ActionTypes.ERROR_FETCH_DATA, payload: error.message }));
         })
 };
-export const startFetchDataAction: ActionCreator<StartFetchDataAction> = () => ({ type: ActionTypes.START_FETCH_DATA });
-export const errorFetchDataAction: ActionCreator<ErrorFetchDataAction> = (errorMessage: string) => ({ type: ActionTypes.ERROR_FETCH_DATA, payload: errorMessage });
-export const successFetchDataAction: ActionCreator<SuccessFetchDataAction> = (fetchedData: string) => ({ type: ActionTypes.SUCCESS_FETCH_DATA, payload: fetchedData });
 export const clearDataAction: ActionCreator<ClearDataAction> = () => ({ type: ActionTypes.CLEAR_DATA });
 
 // REDUCER
