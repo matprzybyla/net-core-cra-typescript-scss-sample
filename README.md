@@ -1,13 +1,14 @@
 ## Project
 
 This is a simple template project you can use as a modern app starting point.
+There are additional branches that present different approach to some common cases you can encounter
 
-### Backend "tags"
+### Backend
 * .Net Core C# Web App service
 * Dependency Injection container [Boostrapper] with async initialization
 * Service using configuration settings
 
-### Frontend "tags"
+### Frontend
 * React, Redux, Typescript, SCSS
 * Routing samples: to component, to defined HTML route, to unknown route
 * Sample components: simple functional one and store connected one
